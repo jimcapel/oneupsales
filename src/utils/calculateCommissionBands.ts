@@ -1,11 +1,11 @@
 import { CommissionBands, CommissionBandsBase } from "../types";
 
 const COMMISSION_BANDS: CommissionBandsBase[] = [
-    { id: "0", start: 0, end: 5000, percentage: 0 },
-    { id: "1", start: 5000, end: 10000, percentage: 0.1 },
-    { id: "2", start: 10000, end: 15000, percentage: 0.15 },
-    { id: "3", start: 15000, end: 20000, percentage: 0.2 },
     { id: "4", start: 20000, end: Infinity, percentage: 0.25 },
+    { id: "3", start: 15000, end: 20000, percentage: 0.2 },
+    { id: "2", start: 10000, end: 15000, percentage: 0.15 },
+    { id: "1", start: 5000, end: 10000, percentage: 0.1 },
+    { id: "0", start: 0, end: 5000, percentage: 0 },
 ];
 
 //  In a production environment, the data this function returns would come from a backend
@@ -44,7 +44,7 @@ const calculateCommissionBands = (revenue: number) => {
         }
     }
 
-    return { total, bands: bands.reverse() };
+    return { total, bands: bands };
 };
 
 export default calculateCommissionBands;
